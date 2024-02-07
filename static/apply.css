@@ -36,7 +36,7 @@
     background-color: rgb(36, 83, 87);
 }
 
-#Benefits {
+#Apply {
     background-color: steelblue;
 }
 .tab p {
@@ -135,4 +135,8 @@ h2 {
     font-size: 25px;
   }
 
-  
+.jobOpening {
+    padding: 25px;
+    font-size: 32px;
+    background-color: lightskyblue;
+}

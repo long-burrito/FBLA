@@ -7,9 +7,11 @@ function benefitLink() {
 }
 
 function applyLink() {
-    window.location.href = "templates/apply.html";
+    window.location.href = "../templates/apply.html";
 }
 
 function loginLink() {
     window.location.href - "login.html";
 }
+
+//"../static/home.html"

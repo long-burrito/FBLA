@@ -234,5 +234,6 @@ label[for="fullTime"], label[for="partTime"] {
 
   .sidebar p {
     font-size: 25px;
+    margin-bottom: 5px;
   }
 

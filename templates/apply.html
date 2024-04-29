@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicious Downtown Donuts</title>
-    <link rel="stylesheet" href="apply.css" media="screen">
-    <script src="home.js"></script>
+    <link rel="stylesheet" href="/../static/apply.css" media="screen">
+    <script src="/../static/apply.js"></script>
 </head>
 <body>
     <div class="topimg">
-        <img src="donuts.jpg">
+        <img src="../static/donuts.jpg">
         <div class="imgcaption">
             Delicious Downtown Donuts
         </div>
@@ -18,20 +18,64 @@
         <div id = "Home" class = "active" onclick = "homeLink()">
             <p>Home</p>
         </div>
-        <div id = "Benefits" class = "right-align" onclick = "benefitLink()">   
+        <div id = "Benefits" class = "right-align" onclick = "benefitLink()">
             <p>Benefits</p>
         </div>
         <div id = "Apply" class = "right-align" onclick = "applyLink()">
             <p>Apply Now!</p>
         </div>
         <div id = "Login" class = "right-align">
-            <p>Employee Login</p>
+            <p><a href = "/login">Employee Login</a></p>
         </div>
     </div>
         <h1>Jobs Currently Open</h1>
-        <div class = "jobOpening">
-            <p>Basically, we have the Baker position open. This job is useful because we are in dire need of any employees.</p>
+        <div class="container">
+            <div class="rectangle">
+                <h2>Baker</h2>
+                <p>We are seeking a passionate and skilled Donut Baker to join our team at Delicious Downtown Donuts. As a Donut Baker, you will be responsible for crafting delicious and visually appealing donuts that delight our customers. The ideal candidate will have a strong understanding of baking techniques, a creative flair for flavor combinations, and a commitment to maintaining high-quality standards.</p>
+            </div>
+            <div class="rectangle">
+                <h2>Cashier</h2>
+                <p>We are currently seeking a friendly and customer-focused individual to join our team as a Cashier at Delicious Downtown Donuts. The ideal candidate will be responsible for providing exceptional service to customers, handling transactions accurately, and maintaining a positive and welcoming atmosphere in our donut shop.</p>
+            </div>
+            <div class="rectangle">
+                <h2>Stocker</h2>
+                <p>We are looking for a motivated and punctual stocker to join our team. You will be responsible for making sure the ingredients are well-stocked, ensuring daily business can proceed uninterrupted by shortages. </p>
+                <p>Additional Requirement: Must be able to lift 25 lb packages off the ground.</p>
+            </div>
         </div>
+        <h2>Job Application Form</h2>
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="jobInterest">Job Interest:</label>
+            <select id="jobInterest" name="jobInterest" required>
+                <option value="Baker">Baker</option>
+                <option value="Cashier">Cashier</option>
+                <option value="Stocker">Stocker</option>
+            </select><br>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea><br>
+
+            <label>Employment Type:</label>
+            <input type="radio" id="fullTime" name="employmentType" value="fullTime" required>
+            <label for="fullTime">Full-Time</label>
+            <input type="radio" id="partTime" name="employmentType" value="partTime" required>
+            <label for="partTime">Part-Time</label><br>
+
+            <label for="resume">Resume (pdf form):</label>
+            <input type="file" id="resume" name="resume" accept=".pdf" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
     <!-- Footer -->
     <aside class="sidebar" role="complementary">
             <div class="wrapper">

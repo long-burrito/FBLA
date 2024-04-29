@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    background-color: #FF69B4;
+    background-color: #000;
     margin: 0;
     position: -webkit-sticky;
     position: sticky;
@@ -40,7 +40,7 @@
 
 #Benefits {
     background-color: steelblue;
-    margin-left: 70%;
+    margin-left: 60%;
 }
 .tab p {
     margin: 0;
@@ -94,7 +94,7 @@
 }
 
 .intro p {
-    font-size: 32px;
+    font-size: 28px;
     margin-left: 15%;
     margin-right: 15%;
 }

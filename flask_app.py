@@ -4,6 +4,7 @@ from flask import jsonify, render_template, request, redirect, url_for, make_res
 import os
 
 app = Flask(__name__)
+file_names = []
 password = "admin"
 @app.route('/')
 def home():
@@ -35,23 +36,58 @@ def submit():
         pdf_path = os.path.join(app.static_folder, pdf_name)
         file_path = os.path.join(app.root_path, filename)
         with open(file_path, 'w') as file:
-            file.write(f"""
-                <html>
-                <head>
-                    <title>Job Application</title>
-                </head>
-                <body>
-                    <h2>Job Application</h2>
-                    <p><strong>First Name:</strong> {first_name}</p>
-                    <p><strong>Last Name:</strong> {last_name}</p>
-                    <p><strong>Job Interest:</strong> {job_interest}</p>
-                    <p><strong>Phone Number:</strong> {phone_number}</p>
-                    <p><strong>Address:</strong> {address}</p>
-                    <p><strong>Employment Type:</strong> {employment_type}</p>
-                    <p><strong><a href="/display_pdf/{pdf_name}" target="_blank">View Resume</a></p>
-                </body>
-                </html>
-            """)
+            new_page = f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Application</title>
+<style>
+    body {{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }}
+    .container {{
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }}
+    h2 {{
+        color: #333;
+    }}
+    strong {{
+        font-weight: bold;
+    }}
+    p {{
+        margin-bottom: 10px;
+    }}
+    a {{
+        color: #007bff;
+        text-decoration: none;
+    }}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Job Application</h2>
+        <p><strong>First Name:</strong> {first_name}</p>
+        <p><strong>Last Name:</strong> {last_name}</p>
+        <p><strong>Job Interest:</strong> {job_interest}</p>
+        <p><strong>Phone Number:</strong> {phone_number}</p>
+        <p><strong>Address:</strong> {address}</p>
+        <p><strong>Employment Type:</strong> {employment_type}</p>
+        <p><strong><a href="/display_pdf/{pdf_name}" target="_blank">View Resume</a></p>
+    </div>
+</body>
+</html>
+"""
+            file.write(new_page)
         if 'resume' in request.files:
             resume_file = request.files['resume']
             if resume_file:
@@ -61,6 +97,7 @@ def submit():
                     pdf_data = pdf_file.read()
                 with open(pdf_path, 'wb') as pdf_file:
                     pdf_file.write(pdf_data)
+    file_names.append(filename)
     return render_template('submitted.html', first_name=first_name, last_name=last_name)
 @app.route('/display_pdf/<filename>')
 def display_pdf(filename):
@@ -78,7 +115,7 @@ def process_form():
     submitted_password = request.form.get('password')
     is_password_correct = submitted_password == password
     if (is_password_correct):
-        return send_from_directory(directory=app.static_folder, path = 'selection.html')
+        return render_template('selection.html', file_names = file_names)
     else:
         return send_from_directory(directory=app.static_folder, path = 'home.html')
 

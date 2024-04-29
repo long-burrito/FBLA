@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    background-color: #FF69B4;
+    background-color: #000;
     margin: 0;
     position: -webkit-sticky;
     position: sticky;
@@ -55,7 +55,7 @@ p {
     margin-bottom: auto;
 }
 
-#Benefits { margin-left: 70%;}
+#Benefits { margin-left: 60%;}
 #Home {margin-left: 5%}
 #Benefits a {
     color: inherit;

@@ -97,7 +97,10 @@ def submit():
                     pdf_data = pdf_file.read()
                 with open(pdf_path, 'wb') as pdf_file:
                     pdf_file.write(pdf_data)
-    file_names.append(filename)
+    firstName = filename[filename.index("\\")+1:filename.index("_")]
+    lastName = filename[filename.index("_") + 1:filename.index("application")-1]
+    full_name = firstName + " " + lastName
+    file_names.append(full_name)
     return render_template('submitted.html', first_name=first_name, last_name=last_name)
 @app.route('/display_pdf/<filename>')
 def display_pdf(filename):

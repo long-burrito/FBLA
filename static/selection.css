@@ -205,36 +205,6 @@ label[for="fullTime"], label[for="partTime"] {
     margin-right: 20px;
 }
 
-/* Footer */
-.sidebar {
-    margin-top: 5%;
-    background-color: lightskyblue;
-    color: #000;
-    padding: 20px;
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  .wrapper {
-    text-align: center;
-    padding: 5px;
-  }
-
-  .sidebar a {
-    color: #FF69B4;
-    text-decoration: underline;
-  }
-
-  .sidebar a:hover {
-    text-decoration: underline;
-    color: #FF69B4;
-  }
-  .sidebar a:active {
-    color: #94295e;
-  }
-
-  .sidebar p {
-    font-size: 25px;
-  }
 
 /* CSS for table and file entries */
 .file-table {
@@ -267,3 +237,34 @@ tr:hover {
     padding: 10px;
     background-color: #f9f9f9;
 }
+
+/* Footer */
+.sidebar {
+    margin-top: 5%;
+    background-color: lightskyblue;
+    color: #000;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .wrapper {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .sidebar a {
+    color: #FF69B4;
+    text-decoration: underline;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+    color: #FF69B4;
+  }
+  .sidebar a:active {
+    color: #94295e;
+  }
+
+  .sidebar p {
+    font-size: 25px;
+  }

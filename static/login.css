@@ -219,6 +219,10 @@ label[for="fullTime"], label[for="partTime"] {
     padding: 5px;
   }
 
+  .intro h1  {
+    text-align: center;
+  }
+
   .sidebar a {
     color: #FF69B4;
     text-decoration: underline;

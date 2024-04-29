@@ -238,6 +238,13 @@ tr:hover {
     background-color: #f9f9f9;
 }
 
+.empty {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #d61212;
+}
+
 /* Footer */
 .sidebar {
     margin-top: 5%;

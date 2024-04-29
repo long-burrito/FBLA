@@ -47,7 +47,7 @@
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td colspan="1">No entries found</td>
+                        <td class="empty" colspan="1">No entries found</td>
                     </tr>
                 {% endif %}
             </tbody>
@@ -58,7 +58,7 @@
 
     <div class="intro">
     <h1>Select Name</h1>
-    <form action="/selection" method="POST">
+    <form action="/selection" method="POST" target="_blank">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" required>
     <br>

@@ -243,6 +243,7 @@ tr:hover {
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #d61212;
+    font-weight: bold;
 }
 
 /* Footer */

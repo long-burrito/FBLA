@@ -89,3 +89,5 @@ def selection():
     #example file name: Rene_Ramirez_application.html
     file_name = f"{first_name}_{last_name}_application.html"
     return redirect(url_for('render_html', filename = file_name))
+
+app.run(debug=True, port=8080)

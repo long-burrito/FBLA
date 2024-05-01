@@ -6,6 +6,7 @@ function benefitLink() {
     window.location.href = "/benefits";
 }
 
+
 function applyLink() {
     window.location.href = "/apply";
 }

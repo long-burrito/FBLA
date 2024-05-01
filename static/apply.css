@@ -38,13 +38,14 @@
     background-color: rgb(36, 83, 87);
 }
 
-#Benefits {
+#Apply {
     background-color: steelblue;
-    margin-left: 60%;
 }
 .tab p {
     margin: 0;
 }
+
+#Benefits { margin-left: 60%;}
 
 #Home {margin-left: 5%}
 
@@ -84,21 +85,36 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.intro {
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.rectangle {
+    width: 30%;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    text-align: left;
+    vertical-align: top;
+    background-color: lightskyblue;
     font-family: 'Open-Sans', sans-serif;
 }
 
-.intro h1 {
-    font-size: 64px;
-    text-align: center;
+.rectangle h2 {
+    margin-bottom: 5px;
+    margin-left: 5px;
 }
 
-.intro p {
-    font-size: 28px;
-    margin-left: 15%;
-    margin-right: 15%;
+.rectangle p {
+    font-family: 'Open-Sans', sans-serif;
 }
-
 
 
 body {
@@ -106,14 +122,90 @@ body {
     margin: 0;
 }
 
+h1 {
+    margin-left: 10px;
+    font-family: 'Open-Sans', sans-serif;
+}
+
 p {
     margin-top: 5px;
 }
 
+h1 {
+    text-align:center;
+}
 h2 {
-    margin-left: 15%;
+    text-align: center;
     font-size: 40px;
     margin-bottom: 5px;
+    font-family: 'Open-Sans', sans-serif;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10%;
+}
+
+label {
+    display: inline;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    #Benefits { margin-left: 20%;}
+}
+
+@media screen and (min-width: 601px) {
+    form {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+/* Spacing between buttons */
+label[for="fullTime"], label[for="partTime"] {
+    margin-right: 20px;
 }
 
 /* Footer */

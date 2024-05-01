@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicious Downtown Donuts</title>
-    <link rel="stylesheet" href="/static/home.css" media="screen">
+    <link rel="stylesheet" href="/static/selection.css" media="screen">
     <script src="/static/home.js"></script>
 </head>
 <body>
@@ -15,7 +16,7 @@
         </div>
     </div>
     <div class="tab">
-        <div id = "Home" class = "active">
+        <div id = "Home" class = "active" onclick = "homeLink()">
             <p>Home</p>
         </div>
         <div id = "Benefits" class = "right-align" onclick = "benefitLink()">
@@ -24,15 +25,49 @@
         <div id = "Apply" class = "right-align" onclick = "applyLink()">
             <p>Apply Now!</p>
         </div>
-        <div id = "Login" class = "right-align" onclick = "loginLink()" >
-            <p><a href = "/login">Employee Login</a></p>
+        <div id = "Login" class = "right-align">
+            <p>Employee Login</p>
         </div>
     </div>
+    <div class="file-table">
+        <table>
+            {% if file_names %}
+            <thead>
+                <tr>
+                    <th>File Names</th>
+                </tr>
+            </thead>
+            {% endif %}
+            <tbody>
+                {% if file_names %}
+                    {% for file_name in file_names %}
+                    <tr>
+                        <td class="file-entry">{{ file_name }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td class="empty" colspan="1">No entries found</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    
+
 
     <div class="intro">
-    <h1>About Us</h1>
-    <p>
-        Welcome to "Delicious Downtown Donuts," a beloved Hot Springs gem founded in 1965 by the baker, John Baker. Nestled in the heart of downtown, this charming donut shop has been a haven for locals and visitors alike. The students from the local residential school, ASMSA, often visit when they finish their classes to taste our yummy food. Now under the care of Johns' granddaughter Emma, "Delicious Downtown Donuts" continues to make customers happy. Step into a cozy donut shop, where each bite is a taste of Hot Springs' sweet history and enduring community spirit. </p>
+    <h1>Select Name</h1>
+    <form action="/selection" method="POST" target="_blank">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required>
+    <br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
 
         <!-- Footer -->
         <aside class="sidebar" role="complementary">
